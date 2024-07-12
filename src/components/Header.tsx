@@ -5,7 +5,7 @@ import Link from "next/link";
 const Header: React.FC = () => {
   return (
     <>
-      <header className="bg-gradient-to-r from-pink-300 to-pink-200 py-6 shadow-md">
+      <header className=" py-6 ">
         <div className="container flex justify-between items-center mx-auto px-36">
           <div className="flex items-center">
             <Logo />
