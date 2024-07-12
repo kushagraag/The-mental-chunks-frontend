@@ -7,7 +7,7 @@ import "../styles/globals.css";
 export default function Home() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <HomepageContent />
       {/* <Footer /> */}
       <Footer2 />
