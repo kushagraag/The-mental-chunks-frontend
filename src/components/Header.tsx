@@ -16,18 +16,18 @@ const Header: React.FC = () => {
               style={{ fontWeight: 400 }}
             >
               <li>
-                <Link href="/" className="hover:underline">
-                  Home
+                <Link href="/">
+                  <p className="text-[20px] hover:text-[#F26044]">Home</p>
                 </Link>
               </li>
               <li>
-                <Link href="/aboutUs" className="hover:underline">
-                  About Us
+                <Link href="/aboutUs">
+                  <p className="text-[20px] hover:text-[#F26044]">About Us</p>
                 </Link>
               </li>
               <li className="relative group">
-                <Link href="#" className="hover:underline flex items-center">
-                  Articles
+                <Link href="#" className=" flex items-center">
+                  <p className="text-[20px] hover:text-[#F26044]">Articles</p>
                   <svg
                     className="w-4 h-4 ml-1"
                     fill="none"
@@ -43,36 +43,40 @@ const Header: React.FC = () => {
                     ></path>
                   </svg>
                 </Link>
-                <ul className="absolute hidden group-hover:block bg-white shadow-md mt-1">
+                <ul className="absolute hidden group-hover:grid shadow-md mt-1">
                   <li>
                     <Link
                       href="/articles/addBlog"
-                      className="block px-4 py-2 text-black hover:bg-gray-100"
+                      className="block px-4 py-2 text-black hover:bg-[#F26044]"
                     >
-                      Add new Blog
+                      <p className="text-[20px] hover:text-[#FFFFFF]">
+                        Add new Blog
+                      </p>
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/articles/blogs"
-                      className="block px-4 py-2 text-black hover:bg-gray-100"
+                      className="block px-4 py-2 text-black hover:bg-[#F26044]"
                     >
-                      Blogs
+                      <p className="text-[20px] hover:text-[#FFFFFF] ">Blogs</p>
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/articles/trending"
-                      className="block px-4 py-2 text-black hover:bg-gray-100"
+                      className="block px-4 py-2 text-black hover:bg-[#F26044] "
                     >
-                      Trending Blogs
+                      <p className="text-[20px] hover:text-[#FFFFFF]">
+                        Trending Blogs
+                      </p>
                     </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link href="/contactUs" className="hover:underline">
-                  Contact Us
+                <Link href="/contactUs">
+                  <p className="text-[20px] hover:text-[#F26044]">Contact Us</p>
                 </Link>
               </li>
             </ul>
