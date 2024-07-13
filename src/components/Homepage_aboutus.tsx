@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Homepage_part2() {
+export default function Homepage_aboutus() {
   return (
     <div>
       <div className="bg-[url('/assets/aboutus-landing-bg.png')] bg-cover bg-center min-h-screen py-10">
@@ -34,9 +35,11 @@ export default function Homepage_part2() {
                 with informative answers that are as enlightening as they are
                 reliable.
               </p>
-              <button className="rounded-lg bg-[#F26044] text-[20px] text-[#fff] font-semibold mt-14 px-16 py-6 mb-36">
-                Read More
-              </button>
+              <Link href="/aboutUs">
+                <button className="rounded-lg bg-[#F26044] text-[20px] text-[#fff] font-semibold mt-14 px-16 py-6 mb-36">
+                  Read More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

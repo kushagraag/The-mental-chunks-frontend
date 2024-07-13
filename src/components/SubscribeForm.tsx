@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function Homepage_part5() {
+export default function SubscribeForm() {
   const [email, setEmail] = useState("");
 
   const handleSubscribe = async (event) => {

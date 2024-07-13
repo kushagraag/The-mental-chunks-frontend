@@ -41,7 +41,7 @@ const tabs = [
   },
 ];
 
-export default function Homepage_part3() {
+export default function Tabs() {
   const [selectedTab, setSelectedTab] = useState(tabs[0].id);
 
   return (

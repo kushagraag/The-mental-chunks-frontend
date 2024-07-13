@@ -1,24 +1,20 @@
 import React from "react";
 
-import Homepage_part1 from "@/components/Homepage-part1";
-import Homepage_part2 from "@/components/Homepage-part2";
-import Homepage_part3 from "@/components/Homepage-part3";
-import Homepage_part4 from "@/components/Homepage-part4";
-import Homepage_part5 from "@/components/Homepage-part5";
+import Homepage_Main from "@/components/Homepage_Main";
+import Homepage_aboutus from "@/components/Homepage_aboutus";
+import Tabs from "@/components/Tabs";
+import Timeline from "@/components/Timeline";
+import SubscribeForm from "@/components/SubscribeForm";
 
 const HomepageContent: React.FC = () => {
   return (
-    <header className="header-class">
-      <Homepage_part1 />
-
-      <Homepage_part2 />
-
-      <Homepage_part3 />
-
-      <Homepage_part4 />
-
-      <Homepage_part5 />
-    </header>
+    <div>
+      <Homepage_Main />
+      <Homepage_aboutus />
+      <Tabs />
+      <Timeline />
+      <SubscribeForm />
+    </div>
   );
 };
 

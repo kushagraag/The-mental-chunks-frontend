@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Image from "next/image";
 
-export default function Homepage_part1() {
+export default function Homepage_Main() {
   return (
     <div>
       <div
