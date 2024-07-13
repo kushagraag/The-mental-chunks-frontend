@@ -1,7 +1,8 @@
 import React from "react";
+
 import Homepage_part1 from "@/components/Homepage-part1";
-import Header from "./Header";
 import Homepage_part2 from "@/components/Homepage-part2";
+import Homepage_part3 from "@/components/Homepage-part3";
 
 const HomepageContent: React.FC = () => {
   return (
@@ -10,11 +11,7 @@ const HomepageContent: React.FC = () => {
 
       <Homepage_part2 />
 
-      <div>
-        <h3>part 3</h3>
-        <p>bg image - blog-nd-article - try to repeat</p>
-        <p>tab or similar with 6 part content</p>
-      </div>
+      <Homepage_part3 />
 
       <div>
         <h3>part 4</h3>
