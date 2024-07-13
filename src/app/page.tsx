@@ -6,7 +6,7 @@ import "../styles/globals.css";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-[#FFE6E2]">
       {/* <Header /> */}
       <HomepageContent />
       {/* <Footer /> */}

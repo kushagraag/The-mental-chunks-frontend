@@ -4,6 +4,7 @@ import Homepage_part1 from "@/components/Homepage-part1";
 import Homepage_part2 from "@/components/Homepage-part2";
 import Homepage_part3 from "@/components/Homepage-part3";
 import Homepage_part4 from "@/components/Homepage-part4";
+import Homepage_part5 from "@/components/Homepage-part5";
 
 const HomepageContent: React.FC = () => {
   return (
@@ -16,11 +17,7 @@ const HomepageContent: React.FC = () => {
 
       <Homepage_part4 />
 
-      <div>
-        <h3>part 5</h3>
-        <p>bg image - some small-bubble-bg + pic color to set bg</p>
-        <p>subscrube to newsletter part</p>
-      </div>
+      <Homepage_part5 />
     </header>
   );
 };
