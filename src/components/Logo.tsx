@@ -10,7 +10,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ width = 100, height = 100 }) => {
   return (
     <div className="logo">
-      <Link href="https://thementalchunks.com/">
+      <Link href="/">
         <Image
           width={width}
           height={height}
