@@ -3,6 +3,7 @@ import React from "react";
 import Homepage_part1 from "@/components/Homepage-part1";
 import Homepage_part2 from "@/components/Homepage-part2";
 import Homepage_part3 from "@/components/Homepage-part3";
+import Homepage_part4 from "@/components/Homepage-part4";
 
 const HomepageContent: React.FC = () => {
   return (
@@ -13,19 +14,7 @@ const HomepageContent: React.FC = () => {
 
       <Homepage_part3 />
 
-      <div>
-        <h3>part 4</h3>
-        <p>bg image - blog-nd-article - try to repeat</p>
-        <div id="3 blogs">
-          <p>try to put line like animation when drawn</p>
-          <p>blog pic</p>
-          <p>Blog heading</p>
-          <p>date</p>
-          <p>one line content</p>
-          <p>button</p>
-        </div>
-        <p>read all button in end</p>
-      </div>
+      <Homepage_part4 />
 
       <div>
         <h3>part 5</h3>
