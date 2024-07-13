@@ -45,15 +45,15 @@ export default function Homepage_part3() {
   const [selectedTab, setSelectedTab] = useState(tabs[0].id);
 
   return (
-    <div className="bg-[url('/assets/blog-nd-article.png')] min-h-screen py-10">
+    <div className="bg-[url('/assets/blog-nd-article.png')] bg-cover bg-center bg-bottom min-h-screen py-10">
       <div className="container mx-auto flex justify-center items-start rounded-lg overflow-hidden">
-        <div className="flex w-full max-w-5xl space-x-8 my-12">
+        <div className="flex w-full max-w-5xl space-x-8 my-16">
           <div className="flex flex-col w-1/4 space-y-2">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab.id)}
-                className={`px-4 py-2 rounded-lg text-[24px] ${
+                className={`px-4 py-2 rounded-lg text-[26px] ${
                   selectedTab === tab.id
                     ? "bg-[#F26044] text-white font-semibold"
                     : "bg-[#ffffff] text-[#F26044] hover:bg-[#fbe5e3]/75 font-semibold"
@@ -67,10 +67,12 @@ export default function Homepage_part3() {
             {tabs.map((tab) =>
               selectedTab === tab.id ? (
                 <div key={tab.id}>
-                  <h2 className="text-[26px] text-[#F26044] font-bold mb-4">
+                  <h2 className="text-[28px] text-[#F26044] font-bold mb-4">
                     {tab.title}
                   </h2>
-                  <p className="text-[22px] text-justify">{tab.content}</p>
+                  <p className="text-[24px] text-justify leading-loose">
+                    {tab.content}
+                  </p>
                 </div>
               ) : null
             )}

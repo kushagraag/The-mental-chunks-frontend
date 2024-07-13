@@ -5,7 +5,7 @@ export default function Homepage_part1() {
   return (
     <div>
       <div
-        className="bg-[url('/assets/hero-section-bg.png')] h-auto"
+        className="bg-[url('/assets/hero-section-bg.png')] min-h-screen py-10"
         // edit later to add curve
         style={{
           clipPath: "path('M0,0 H100% V85% C50% 100%, 50% 70%, 0 85% Z')",

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Homepage_part2() {
   return (
     <div>
-      <div className="bg-[url('/assets/aboutus-landing-bg.png')] h-auto">
+      <div className="bg-[url('/assets/aboutus-landing-bg.png')] bg-cover bg-center min-h-screen py-10">
         <div className="container flex justify-between items-center mx-auto px-36 ">
           <div className="container grid grid-cols-2 gap-4 mt-28">
             <div>
