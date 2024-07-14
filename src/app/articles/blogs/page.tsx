@@ -1,3 +1,14 @@
-export default function Blog() {
-  return <h1>The mental chunks Blog</h1>;
+import React from "react";
+
+import "@/styles/globals.css";
+import BlogList from "@/components/BlogList";
+import Footer from "@/components/Footer";
+
+export default function Blogs() {
+  return (
+    <div className="bg-[#FFE6E2]">
+      <BlogList />
+      <Footer />
+    </div>
+  );
 }
