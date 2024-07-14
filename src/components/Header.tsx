@@ -43,21 +43,19 @@ const Header: React.FC = () => {
                     ></path>
                   </svg>
                 </Link>
-                <ul className="absolute hidden group-hover:grid shadow-md mt-1">
+                <ul className="absolute hidden group-hover:grid shadow-2xl mt-1">
                   <li>
                     <Link
                       href="/articles/addBlog"
-                      className="block px-4 py-2 text-black hover:bg-[#F26044]"
+                      className="block px-4 py-2 text-black hover:bg-[#F26044] hover:text-[#FFFFFF]"
                     >
-                      <p className="text-[20px] hover:text-[#FFFFFF]">
-                        Add new Blog
-                      </p>
+                      <p className="text-[20px]">Add new Blog</p>
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/articles/blogs"
-                      className="block px-4 py-2 text-black hover:bg-[#F26044]"
+                      className="block px-4 py-2 text-black hover:bg-[#F26044] hover:text-[#FFFFFF]"
                     >
                       <p className="text-[20px] hover:text-[#FFFFFF] ">Blogs</p>
                     </Link>
@@ -65,7 +63,7 @@ const Header: React.FC = () => {
                   <li>
                     <Link
                       href="/articles/trending"
-                      className="block px-4 py-2 text-black hover:bg-[#F26044] "
+                      className="block px-4 py-2 text-black hover:bg-[#F26044] hover:text-[#FFFFFF]"
                     >
                       <p className="text-[20px] hover:text-[#FFFFFF]">
                         Trending Blogs
