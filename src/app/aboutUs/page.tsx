@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/globals.css";
+import "@/styles/globals.css";
 import AboutUsComponent from "@/components/AboutUsComponent";
 import Footer from "@/components/Footer";
 
