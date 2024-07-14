@@ -1,3 +1,15 @@
+import React from "react";
+
+import "../../styles/globals.css";
+import Header from "@/components/Header";
+import AboutUsComponent from "@/components/AboutUsComponent";
+import Footer from "@/components/Footer";
+
 export default function AboutUs() {
-  return <h1>The mental chunks AboutUs</h1>;
+  return (
+    <div className="bg-[#FFE6E2]">
+      <AboutUsComponent />
+      <Footer />
+    </div>
+  );
 }
