@@ -2,7 +2,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Link from "next/link";
 
-export default function TnCComponent() {
+export default function AboutUsComponent() {
   return (
     <>
       <div className="bg-[url('/assets/hero-section-bg.png')] py-10 ">
