@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/components/Header";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 import ReactQuill, { Quill } from "react-quill";
@@ -14,7 +14,7 @@ const EditorComponent: React.FC = () => {
   const [subHeading, setSubHeading] = useState<string>("");
   const [displayPicture, setDisplayPicture] = useState<File | null>(null);
   const [content, setContent] = useState<string>("");
-  let quillRef: ReactQuill | null = null;
+  const quillRef = useRef<ReactQuill | null>(null);
 
   const handleHeadingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHeading(e.target.value);
@@ -109,35 +109,43 @@ const EditorComponent: React.FC = () => {
   };
 
   const handleImageUpload = useCallback(() => {
-    const input = document.createElement("input");
-    input.setAttribute("type", "file");
-    input.setAttribute("accept", "image/*");
-    input.click();
-    input.onchange = async () => {
-      const file = input.files![0];
-      const formData = new FormData();
-      formData.append("image", file);
+    if (typeof document !== "undefined") {
+      const input = document.createElement("input");
+      input.setAttribute("type", "file");
+      input.setAttribute("accept", "image/*");
+      input.click();
+      input.onchange = async () => {
+        if (input.files && input.files[0]) {
+          const file = input.files[0];
+          const formData = new FormData();
+          formData.append("image", file);
 
-      try {
-        const response = await axios.post(
-          "http://localhost:5000/upload",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
+          try {
+            const response = await axios.post(
+              "http://localhost:5000/upload",
+              formData,
+              {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                },
+              }
+            );
+
+            if (quillRef.current) {
+              const range = quillRef.current.getEditor().getSelection();
+              if (range) {
+                quillRef.current
+                  .getEditor()
+                  .insertEmbed(range.index, "image", response.data.imageUrl);
+              }
+            }
+          } catch (error) {
+            console.error("Error uploading image:", error);
           }
-        );
-
-        const range = quillRef!.getEditor().getSelection();
-        quillRef!
-          .getEditor()
-          .insertEmbed(range!.index, "image", response.data.imageUrl);
-      } catch (error) {
-        console.error("Error uploading image:", error);
-      }
-    };
-  }, [quillRef]);
+        }
+      };
+    }
+  }, []);
 
   const modules = {
     resize: {
@@ -147,19 +155,20 @@ const EditorComponent: React.FC = () => {
     },
     toolbar: {
       container: [
-        [{ header: "1" }, { header: "2" }, { header: "3" }, { font: [] }],
-        [{ size: [] }],
+        [{ header: "1" }, { header: "2" }],
+        // [{ size: [] }],
         ["bold", "italic", "underline", "strike", "blockquote"],
         [
           { list: "ordered" },
           { list: "bullet" },
-          { indent: "-1" },
-          { indent: "+1" },
+          // { indent: "-1" },
+          // { indent: "+1" },
         ],
         ["link", "image", "video"],
+        // ["link", "image"],
         ["clean"],
         [{ align: [] }],
-        ["code-block"],
+        // ["code-block"],
       ],
       handlers: {
         image: handleImageUpload,
@@ -203,9 +212,7 @@ const EditorComponent: React.FC = () => {
           />
         </label>
         <ReactQuill
-          ref={(el) => {
-            if (el) quillRef = el;
-          }}
+          ref={quillRef}
           value={content}
           onChange={handleContentChange}
           modules={modules}
