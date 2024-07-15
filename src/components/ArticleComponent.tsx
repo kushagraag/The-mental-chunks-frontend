@@ -8,6 +8,9 @@ import Blog from "@/components/InterfaceBlog";
 import Header from "@/components/Header";
 
 import "@/styles/article.css";
+import { HiCalendarDays } from "react-icons/hi2";
+import { PiHandsClappingFill } from "react-icons/pi";
+import { FaRegComment } from "react-icons/fa6";
 
 export default function ArticleComponent() {
   const [currentArticle, setCurrentArticle] = React.useState<Blog | null>(null);
@@ -45,9 +48,15 @@ export default function ArticleComponent() {
         "li",
         "a",
         "blockquote",
+        "strong",
+        "em",
+        "i",
+        "u",
+        "strike",
       ],
       allowedAttributes: {
         a: ["href"],
+        img: ["src", "width", "height"],
       },
       allowedIframeHostnames: [], // Optional: Allow specific iframe sources
     });
@@ -62,13 +71,30 @@ export default function ArticleComponent() {
           Article is on the way...
         </div>
       ) : (
-        <div>
-          <div className="container mx-auto  text-justify max-w-screen-lg mt-12 h-auto">
-            <h1 className="text-[50px] text-[#340000] text-center font-bold mb-4 ">
+        <div className="container mx-auto px-24 max-w-screen-lg my-12 h-auto">
+          <div className="">
+            <h1 className="text-[50px] text-[#040404] font-bold mb-4 ">
               {currentArticle?.heading}
             </h1>
+            <h1 className="text-[35px] text-[#340000a0] font-bold mb-4 ">
+              {currentArticle?.sub_heading}
+            </h1>
           </div>
-          <div className="content container mx-auto text-justify max-w-screen-lg mt-12 h-auto">
+          <div className="flex place-content-end gap-4 mt-4 align-right">
+            <p className="text-[16px] flex">
+              <HiCalendarDays />
+              <span className="ml-2 -mt-1"> {currentArticle?.date}</span>
+            </p>
+            <p className="text-[16px] flex">
+              <PiHandsClappingFill />
+              <span className="ml-2 -mt-1">{currentArticle?.likes}</span>
+            </p>
+            <p className="text-[16px] flex">
+              <FaRegComment />
+              <span className="ml-2 -mt-1">{currentArticle?.comments}</span>
+            </p>
+          </div>
+          <div className="content mt-8">
             <div>
               {currentArticle && sanitizeAndRenderHtml(currentArticle.content)}
             </div>

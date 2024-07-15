@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-.content h1 {
-	background-color: aquamarine;
+.content {
+	@apply leading-loose text-[20px]
+}
+
+.content {
+	h1 {
+		@apply text-[35px] text-[#C52809] font-bold;
+	}
+
+	h2 {
+		@apply text-[24px] font-bold;
+	}
+
+	ul {
+		@apply list-disc list-inside
+	}
+
+	ol {
+		@apply list-decimal list-inside
+	}
+
+	blockquote {
+		@apply border-l-4 border-gray-500 italic pl-4 text-gray-700
+	}
+
+	strong {
+		@apply font-bold
+	}
+
+	em, i {
+		@apply italic
+	}
+
+	a {
+		@apply text-blue-600;
+	}
+
+	a:visited {
+		@apply text-purple-600;
+	}
+
+	u {
+		@apply underline underline-offset-4
+	}
+
+	strike {
+		@apply line-through
+	}
 }
