@@ -46,14 +46,6 @@ const Header: React.FC = () => {
                 <ul className="absolute hidden group-hover:grid shadow-2xl mt-1">
                   <li>
                     <Link
-                      href="/articles/addBlog"
-                      className="block px-4 py-2 text-black hover:bg-[#F26044] hover:text-[#FFFFFF]"
-                    >
-                      <p className="text-[20px]">Add new Blog</p>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/articles/blogs"
                       className="block px-4 py-2 text-black hover:bg-[#F26044] hover:text-[#FFFFFF]"
                     >
