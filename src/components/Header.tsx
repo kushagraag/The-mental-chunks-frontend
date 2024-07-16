@@ -46,7 +46,10 @@ const Header: React.FC = () => {
                 <ul className="absolute hidden group-hover:grid shadow-2xl mt-1">
                   <li>
                     <Link
-                      href="/articles/blogs"
+                      href={{
+                        pathname: "/articles/blogs",
+                        query: { page: 1, limit: 5 },
+                      }}
                       className="block px-4 py-2 text-black hover:bg-[#F26044] hover:text-[#FFFFFF]"
                     >
                       <p className="text-[20px] hover:text-[#FFFFFF] ">Blogs</p>

@@ -3,24 +3,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
-
 import { HiCalendarDays } from "react-icons/hi2";
 import { PiHandsClappingFill } from "react-icons/pi";
 import { FaRegComment } from "react-icons/fa6";
 
-interface Blog {
-  id: string;
-  heading: string;
-  sub_heading: string;
-  date: string;
-  display_picture: string;
-  content: string;
-  comments: number;
-  likes: number;
-}
+import Blog from "@/components/InterfaceBlog";
+import Header from "@/components/Header";
 
 export default function BlogList() {
   const [articles, setArticles] = useState<Blog[]>([]);
@@ -30,7 +20,8 @@ export default function BlogList() {
     const fetchArticles = async () => {
       try {
         const response = await axios.get("http://localhost:5000/articles");
-        setArticles(response.data);
+        console.log(response.data);
+        setArticles(response.data.data.reverse());
       } catch (e) {
         console.log("Error fetching articles: ", e);
       } finally {
@@ -49,15 +40,16 @@ export default function BlogList() {
           Blogs
         </h1>
       </div>
-      <div className="container mx-auto text-justify max-w-screen-lg mt-12 h-auto">
+      <div className="container mx-auto text-justify max-w-screen-lg mt-12 h-auto ">
         {isLoading ? (
           <div className="text-[35px] text-[#C52809] font-bold">
             Peace is loading...
           </div>
         ) : (
+          articles &&
           articles.map((article) => (
             <div key={article.id}>
-              <div className="grid grid-cols-3 my-8 hover:shadow-2xl p-4">
+              <div className="grid grid-cols-3 my-8 hover:shadow-2xl rounded-2xl p-4">
                 <div className="col-span-2 px-8">
                   <h2 className="text-[35px] text-[#C52809] font-bold">
                     {article.heading}
@@ -92,6 +84,7 @@ export default function BlogList() {
                     width={220}
                     height={220}
                     alt={article.heading}
+                    className="rounded-2xl"
                   />
                 </div>
               </div>
