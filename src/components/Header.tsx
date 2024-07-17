@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                   </li>
                   <li>
                     <Link
-                      href="/articles/trending"
+                      href="/trending"
                       className="block px-4 py-2 text-black hover:bg-[#F26044] hover:text-[#FFFFFF]"
                     >
                       <p className="text-[20px] hover:text-[#FFFFFF]">

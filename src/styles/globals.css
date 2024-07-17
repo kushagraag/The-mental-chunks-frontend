@@ -7,6 +7,12 @@
 	transition: transform 0.3s ease-in-out;
 }
 
+.truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 p {
 	@apply text-black
 }

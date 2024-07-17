@@ -14,7 +14,6 @@ const EditorComponent: React.FC = () => {
   const [subHeading, setSubHeading] = useState<string>("");
   const [displayPicture, setDisplayPicture] = useState<File | null>(null);
   const [content, setContent] = useState<string>("");
-  const [targetCategory, setTargetCategory] = useState<string>("articles");
   const quillRef = useRef<ReactQuill | null>(null);
 
   const handleHeadingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,10 +39,6 @@ const EditorComponent: React.FC = () => {
 
   const handleContentChange = (value: string) => {
     setContent(value);
-  };
-
-  const handleCategoryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTargetCategory(e.target.value);
   };
 
   const getCurrentDateFormatted = (): string => {
@@ -96,13 +91,8 @@ const EditorComponent: React.FC = () => {
       }
     }
 
-    const endpoint =
-      targetCategory === "trending_articles"
-        ? "http://localhost:5000/trending_articles"
-        : "http://localhost:5000/articles";
-
     try {
-      const response = await axios.post(endpoint, {
+      const response = await axios.post("http://localhost:5000/articles", {
         id: articleId,
         heading,
         sub_heading: subHeading,
@@ -244,30 +234,6 @@ const EditorComponent: React.FC = () => {
           modules={modules}
           className="min-h-80 my-4 bg-white rounded-lg"
         />
-
-        <div className="mb-4">
-          <label className="mr-4">
-            <input
-              type="radio"
-              value="articles"
-              checked={targetCategory === "articles"}
-              onChange={handleCategoryChange}
-              className="mr-2"
-            />
-            Add to Articles
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="trending_articles"
-              checked={targetCategory === "trending_articles"}
-              onChange={handleCategoryChange}
-              className="mr-2"
-            />
-            Add to Trending Articles
-          </label>
-        </div>
-
         <button
           onClick={saveContent}
           className="rounded-lg bg-[#F26044] text-[20px] text-[#fff] font-semibold p-4"
