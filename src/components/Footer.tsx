@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ImFacebook2 } from "react-icons/im";
+import { IconContext } from "react-icons";
 
 import Logo from "./Logo";
 
@@ -13,10 +15,19 @@ const Footer: React.FC = () => {
         </div>
         <div className="mt-12 grid place-content-center">
           <p className="text-[32px] text-white font-bold">
-            Mental Health for everyone
+            Shaping Curious Self For Everyone
           </p>
         </div>
         <div className="flex justify-center my-16 space-x-24">
+          <Link href="#">
+            <Image
+              src="/assets/whatsapp.png"
+              width="48"
+              height="48"
+              alt="twitwhatsappter"
+              className="m-4"
+            />
+          </Link>
           <Link href="#">
             <Image
               src="/assets/facebook.png"
@@ -35,16 +46,8 @@ const Footer: React.FC = () => {
               className="m-4"
             />{" "}
           </Link>
-          <Link href="#">
-            <Image
-              src="/assets/twitter.png"
-              width="48"
-              height="48"
-              alt="twitter"
-              className="m-4"
-            />{" "}
-          </Link>
         </div>
+        ;
       </div>
       {/* black bg */}
       <div className="bg-black p-8 text-white">
