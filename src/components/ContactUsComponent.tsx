@@ -37,7 +37,7 @@ export default function ContactUsComponent() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto text-justify max-w-screen-lg my-12 h-auto">
+      {/* <div className="container mx-auto text-justify max-w-screen-lg my-12 h-auto">
         <div>
           <h3 className="text-[22px] text-[#C52809]  font-serif mt-4 text-center ">
             Find Us
@@ -56,7 +56,7 @@ export default function ContactUsComponent() {
             ></iframe>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
