@@ -17,11 +17,17 @@ const EditorComponent: React.FC = () => {
   const quillRef = useRef<ReactQuill | null>(null);
 
   const handleHeadingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHeading(e.target.value);
+    const { value } = e.target;
+    if (value.length <= 45) {
+      setHeading(value);
+    }
   };
 
   const handleSubHeadingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSubHeading(e.target.value);
+    const { value } = e.target;
+    if (value.length <= 60) {
+      setSubHeading(e.target.value);
+    }
   };
 
   const handleDisplayPictureChange = (
@@ -186,22 +192,32 @@ const EditorComponent: React.FC = () => {
       </div>
 
       <div className="container mx-auto max-w-screen-lg mt-12 h-auto">
-        <input
-          type="text"
-          value={heading}
-          onChange={handleHeadingChange}
-          placeholder="Enter article heading"
-          required
-          className="w-full p-2 mb-4 text-lg rounded"
-        />
-        <input
-          type="text"
-          value={subHeading}
-          onChange={handleSubHeadingChange}
-          placeholder="Enter article sub-heading"
-          required
-          className="w-full p-2 mb-4 text-lg rounded"
-        />
+        <div>
+          <small className="flex place-content-end text-sm text-gray-500">
+            {heading.length}/45
+          </small>
+          <input
+            type="text"
+            value={heading}
+            onChange={handleHeadingChange}
+            placeholder="Enter article heading"
+            required
+            className="w-full p-2 mb-4 text-lg rounded"
+          />
+        </div>
+        <div>
+          <small className="flex place-content-end text-sm text-gray-500">
+            {subHeading.length}/60
+          </small>
+          <input
+            type="text"
+            value={subHeading}
+            onChange={handleSubHeadingChange}
+            placeholder="Enter article sub-heading"
+            required
+            className="w-full p-2 mb-4 text-lg rounded"
+          />
+        </div>
         <label className="grid items-center text-left">
           <p className="mx-4">Picture to display on top.</p>
           <input
