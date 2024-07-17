@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.zoom:hover {
+	transform: scale(1.15);
+	transition: transform 0.3s ease-in-out;
+}
+
+p {
+	@apply text-black
+}
+
+input {
+	@apply bg-white
+}
+
+
+h2 {
+	@apply text-black
+}
+
+button:hover {
+	@apply bg-[#e0300d]
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+	width: 10px;
+	/* Width of the scrollbar */
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+
+	/* Color of the scrollbar track */
+}
+
+/* Handle (thumb) of the scrollbar */
+::-webkit-scrollbar-thumb {
+	background: #f53a15c0;
+	/* Color of the scrollbar thumb */
+	border-radius: 5px;
+	/* Rounded corners of the scrollbar thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #f53a15e5;
+	/* Color of the scrollbar thumb on hover */
+}

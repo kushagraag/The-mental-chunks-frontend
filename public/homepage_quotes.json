@@ -1,0 +1,36 @@
+{
+	"homepage_quotes": [
+		{
+			"author": "Albert Einstein",
+			"quote": "Life is like riding a bicycle. To keep your balance, you must keep moving."
+		},
+		{
+			"author": "Oscar Wilde",
+			"quote": "Be yourself; everyone else is already taken."
+		},
+		{
+			"author": "Mahatma Gandhi",
+			"quote": "The best way to find yourself is to lose yourself in the service of others."
+		},
+		{
+			"author": "Walt Disney",
+			"quote": "The way to get started is to quit talking and begin doing."
+		},
+		{
+			"author": "Eleanor Roosevelt",
+			"quote": "The future belongs to those who believe in the beauty of their dreams."
+		},
+		{
+			"author": "Steve Jobs",
+			"quote": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work."
+		},
+		{
+			"author": "Nelson Mandela",
+			"quote": "It always seems impossible until it’s done."
+		},
+		{
+			"author": "Mark Twain",
+			"quote": "The secret of getting ahead is getting started."
+		}
+	]
+}
