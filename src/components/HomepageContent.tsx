@@ -5,7 +5,7 @@ import Homepage_aboutus from "@/components/Homepage_aboutus";
 import Tabs from "@/components/Tabs";
 import Timeline from "@/components/Timeline";
 import SubscribeForm from "@/components/SubscribeForm";
-import Homepage_Quotes from "@/components/Homepage_quotes";
+import Homepage_Quotes from "@/components/Homepage_Quotes";
 
 const HomepageContent: React.FC = () => {
   return (
