@@ -5,11 +5,10 @@ export default function Homepage_Main() {
   return (
     <div>
       <div className="bg-[url('/assets/hero-section-bg.png')] min-h-screen py-10">
-        {" "}
         <Header />
         <div className="container flex justify-between  mx-auto md:px-36 pl-8">
           <div className="container grid md:grid-cols-2 gap-4 -mr-20 ">
-            <div className="order-1 px-12 mt-8 md:mt-28 -ml-10 -mr-12 place-items-center md:place-items-start">
+            <div className="order-1 px-12 mt-8 md:mt-28 -ml-10 place-items-center md:place-items-start">
               <h6 className="text-[#C52809] text-[22px] md:text-[24px] font-serif ">
                 Breathe, Relax And Be Still.
               </h6>
