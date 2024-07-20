@@ -1,4 +1,13 @@
 "use client";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Carousel,
+  IconButton,
+  Typography,
+} from "@material-tailwind/react";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -29,27 +38,84 @@ export default function Homepage_Quotes() {
         <h1 className="text-5xl text-[#340000] text-center font-bold mb-8">
           Quotes for you
         </h1>
-        <div className="overflow-x-auto scrollbar-hide">
-          {isLoading ? (
-            <p className="text-lg font-medium text-black">Quotes are loading</p>
-          ) : (
-            <div className="flex space-x-4 p-4">
-              {quotes &&
-                quotes.map((quote, index) => (
-                  <div key={index} className="w-80 flex-shrink-0">
-                    <div className="bg-white shadow-lg rounded-2xl p-6">
-                      <p className="text-lg font-medium text-black">
-                        {quote.quote}
-                      </p>
-                      <p className="text-sm text-[#340000] text-right mt-2">
-                        - {quote.author}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          )}
-        </div>
+
+        {isLoading ? (
+          <p className="text-lg font-medium text-black">Quotes are loading</p>
+        ) : (
+          <Carousel
+            className="rounded-xl "
+            color="#f26044"
+            autoplay
+            autoplayDelay={2000}
+            loop
+            prevArrow={({ handlePrev }) => (
+              <IconButton
+                variant="text"
+                style={{ color: "#F26044" }}
+                size="lg"
+                onClick={handlePrev}
+                className="!absolute top-2/4 left-4 -translate-y-2/4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                  />
+                </svg>
+              </IconButton>
+            )}
+            nextArrow={({ handleNext }) => (
+              <IconButton
+                variant="text"
+                style={{ color: "#F26044" }}
+                size="lg"
+                onClick={handleNext}
+                className="!absolute top-2/4 !right-4 -translate-y-2/4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </IconButton>
+            )}
+          >
+            {quotes.map((quote, index) => (
+              <div
+                key={index}
+                className="flex justify-center py-8 px-6 md:px-0"
+              >
+                <Card className="mt-6 h-full w-full md:w-1/2 ">
+                  <CardBody>
+                    <Typography className="font-normal text-black text-lg">
+                      {quote.quote}
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="pt-0 text-right">
+                    <Typography>- {quote?.author}</Typography>
+                  </CardFooter>
+                </Card>
+              </div>
+            ))}
+          </Carousel>
+        )}
         <div className="text-center mt-8 mb-12">
           <Link href="/quotes">
             <button className="rounded-lg bg-[#F26044] text-2xl text-white font-semibold px-8 py-4 inline-block">
