@@ -40,7 +40,7 @@ export default function SubscribeForm() {
 
   return (
     <div
-      className=" bg-cover min-h-screen flex items-center justify-center py-10"
+      className=" bg-cover flex items-center justify-center py-10"
       style={{
         backgroundImage: "url('/assets/small-bubble-bg.png')",
         backgroundRepeat: "no-repeat",
@@ -49,28 +49,27 @@ export default function SubscribeForm() {
       }}
     >
       <div
-        className="bg-[#FFF4F3] p-20 rounded-lg shadow-lg"
+        className="bg-[#FFF4F3]  p-8 rounded-lg shadow-lg h-[30vh] md:h-[50vh]"
         style={{
-          height: "75vh",
           width: "65vw",
         }}
       >
-        <h2 className="text-[35px] font-bold mb-4 mt-20 text-center">
+        <h2 className="text-[26px] md:text-[35px] font-bold mb-4 md:mt-8 text-center">
           Subscribe to our Newsletter
         </h2>
-        <div className="container mt-28 max-w-lg w-full items-center mx-auto">
+        <div className="container md:mt-8 max-w-lg w-full items-center mx-auto">
           <form onSubmit={handleSubscribe}>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="w-full p-6 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 text-[24px]"
+              className="w-full p-2 md:p-6 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 text-[20px] md:text-[24px]"
               required
             />
             <button
               type="submit"
-              className="w-full p-3 bg-[#F26044] text-white text-[24px] rounded-lg hover:bg-[#d14d3b] focus:outline-none"
+              className="w-full p-2 md:p-3 bg-[#F26044] text-white text-[20px] md:text-[24px] rounded-lg hover:bg-[#d14d3b] focus:outline-none"
             >
               Subscribe
             </button>
