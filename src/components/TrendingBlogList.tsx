@@ -23,7 +23,7 @@ export default function TrendingBlogList() {
       try {
         setisLoading(true);
         const response = await axios.get(
-          `http://localhost:5000/trending_articles?page=${page}`
+          `http://localhost:5000/trending?page=${page}`
         );
         setArticles(response.data.data.reverse());
         setTotalPages(response.data.totalPages);
