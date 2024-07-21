@@ -72,7 +72,7 @@ export default function Homepage_Tabs() {
                     className={`rounded-lg font-semibold px-8 py-2 mb-2 ${
                       selectedTab === id
                         ? "bg-[#ffffff] text-[#F26044]"
-                        : "bg-[#F26044] hover:bg-[#fbe5e3] text-white"
+                        : "bg-[#F26044] hover:bg-[#fbe5e3]/25 hover:text-[#F26044] text-white"
                     }`}
                   >
                     {title}
