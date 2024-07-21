@@ -7,6 +7,8 @@ import Cookies from "js-cookie";
 
 import Blog from "@/components/InterfaceBlog";
 import Header from "@/components/Header";
+import DisqusComments from "@/components/DisqusComments";
+import DisqusCommentLikesCount from "@/components/DisqusCommentLikesCount";
 
 import "@/styles/article.css";
 import { HiCalendarDays } from "react-icons/hi2";
@@ -18,6 +20,7 @@ export default function ArticleComponent() {
   const [currentArticle, setCurrentArticle] = React.useState<Blog | null>(null);
   const [isLoading, setIsLoading] = React.useState(true);
   const [liked, setLiked] = React.useState(false);
+  const [commentCount, setCommentCount] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     const fetchArticle = async () => {
@@ -127,11 +130,11 @@ export default function ArticleComponent() {
     <div className="bg-[url('/assets/hero-section-bg.png')] py-10 ">
       <Header />
       {isLoading ? (
-        <div className="text-[35px] text-[#C52809] font-bold">
+        <div className="text-[35px] text-[#C52809] mx-auto font-bold">
           Article is on the way...
         </div>
       ) : (
-        <div className="container mx-auto px-24 max-w-screen-lg my-8 h-auto">
+        <div className="container mx-auto px-4 md:px-24 max-w-screen-lg my-8 h-auto">
           <div>
             <h1 className="text-[50px] text-[#040404] font-bold mb-4 ">
               {currentArticle?.heading}
@@ -151,7 +154,9 @@ export default function ArticleComponent() {
             </p>
             <p className="text-[16px] flex">
               <FaRegComment />
-              <span className="ml-2 -mt-1">{currentArticle?.comments}</span>
+              <span className="ml-2 -mt-1">
+                {commentCount && commentCount > 0 ? commentCount : "0"}
+              </span>
             </p>
           </div>
           <div className="content mt-8">
@@ -172,6 +177,19 @@ export default function ArticleComponent() {
               {currentArticle?.likes}
             </span>
           </Button>
+          {currentArticle && (
+            <div className="mt-4">
+              <DisqusComments
+                url={`http://localhost:3000${window.location.pathname}`}
+                identifier={currentArticle.id}
+                title={currentArticle.heading}
+              />
+              <DisqusCommentLikesCount
+                articleId={currentArticle.id}
+                setCommentCount={setCommentCount}
+              />
+            </div>
+          )}
         </div>
       )}
     </div>
