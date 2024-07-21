@@ -66,7 +66,7 @@ export default function Homepage_Tabs() {
               <TabsHeader className="bg-transparent">
                 {data.map(({ title, id }) => (
                   <Tab
-                    key={id}
+                    key={id + title}
                     value={id}
                     onClick={() => setSelectedTab(id)}
                     className={`rounded-lg font-semibold px-8 py-2 mb-2 ${
@@ -83,7 +83,7 @@ export default function Homepage_Tabs() {
                 {data.map(({ title, id, content }) => (
                   <>
                     <TabPanel
-                      key={id}
+                      key={title + id}
                       value={id}
                       className="font-semibold text-[#F26044] text-3xl"
                     >

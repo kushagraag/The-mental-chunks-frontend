@@ -102,7 +102,6 @@ const Header: React.FC = () => {
       <Navbar className="mx-auto max-w-screen-xl md:px-6 py-3 my-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
-            as="a"
             href="#"
             variant="h6"
             className="mr-4 cursor-pointer py-1.5"

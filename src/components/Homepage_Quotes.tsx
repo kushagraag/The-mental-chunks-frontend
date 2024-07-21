@@ -20,7 +20,7 @@ export default function Homepage_Quotes() {
       try {
         const res = await fetch("/homepage_quotes.json");
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
         setQuotes(data.homepage_quotes);
       } catch (e) {
         console.log("error in quotes : ", e);

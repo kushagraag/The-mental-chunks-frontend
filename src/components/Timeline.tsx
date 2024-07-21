@@ -14,7 +14,7 @@ export default function Timeline() {
     const fetchArticles = async () => {
       try {
         const response = await axios.get("http://localhost:5000/articles");
-        console.log(response.data);
+        // console.log(response.data);
         setArticles(response.data.data.reverse().slice(0, 3));
       } catch (e) {
         console.log("Error fetching articles: ", e);

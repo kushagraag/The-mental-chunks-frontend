@@ -1,12 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-interface LogoProps {
-  width?: number;
-  height?: number;
-}
-
-const Logo: React.FC<LogoProps> = ({ width = 100, height = 100 }) => {
+const Logo: React.FC = () => {
   return (
     <div className="logo">
       <Link href="/">
