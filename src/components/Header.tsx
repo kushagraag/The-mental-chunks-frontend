@@ -43,7 +43,7 @@ function NavList() {
         <Link
           href={{
             pathname: "/articles/blogs",
-            query: { page: 1, limit: 5 },
+            query: { page: 1, limit: 10 },
           }}
         >
           <p className="text-[20px] hover:text-[#F26044] ">Blogs</p>

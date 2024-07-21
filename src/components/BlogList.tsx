@@ -85,10 +85,10 @@ export default function BlogList() {
                         <PiHandsClappingFill />
                         <span className="ml-2 -mt-1">{article.likes}</span>
                       </p>
-                      <p className="text-[16px] flex">
+                      {/* <p className="text-[16px] flex">
                         <FaRegComment />
                         <span className="ml-2 -mt-1">{article.comments}</span>
-                      </p>
+                      </p> */}
                     </div>
                     <div className="flex justify-center">
                       <button className="rounded-lg bg-[#F26044] text-[16px] text-[#fff] font-semibold mt-4 px-8 py-4 block text-center">
