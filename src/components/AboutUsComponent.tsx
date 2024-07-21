@@ -12,14 +12,14 @@ export default function AboutUsComponent() {
             About Us
           </h1>
         </div>
-        <div className="mx-[10vw] flex items-center my-[10vh]">
+        <div className="mx-[10vw] md:flex items-center my-[5vh] md:my-[10vh]">
           <Image
             src="/assets/About-us-Banner-image-2-Yoga.png"
             width={491}
             height={611}
             alt="aboutUsimg"
           />
-          <div className="mx-[5vw]">
+          <div className="mx-[5vw] my-[5vh] md:my[0vh]">
             <h2 className="text-[35px] text-[#340000] font-bold mb-8">
               What do we do ?
             </h2>
@@ -36,12 +36,10 @@ export default function AboutUsComponent() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto text-justify max-w-screen-lg mt-12 h-auto">
-        <div>
-          <h2 className="text-[35px] text-[#340000] font-bold mb-8">
-            Who We Are
-          </h2>
-          <p className="text-[20px] my-8 text-justify leading-loose">
+      <div className="container mx-auto text-justify leading-loose md:max-w-screen-lg mt-16 h-auto">
+        <div className="mx-[7.5vw] md:mx-[0vw]">
+          <h2 className="text-[35px] text-[#340000] font-bold">Who We Are</h2>
+          <p className="text-[20px] my-4">
             Welcome to Mental Chunks, your go-to destination for factual,
             expert, and research-backed insights into the depths of the human
             mind. Ever found yourself pondering questions about psychology,
@@ -49,7 +47,7 @@ export default function AboutUsComponent() {
             Chunks, we’re on a mission to quench your curiosity with informative
             answers that are as enlightening as they are reliable.
           </p>
-          <p className="text-[20px] my-8 text-justify leading-loose">
+          <p className="text-[20px] my-8">
             But we’re more than just a repository of knowledge. We’re a dynamic
             digital media venture, partnering with clients to elevate their
             presence in the ever-evolving landscape of social media. Whether
@@ -57,14 +55,14 @@ export default function AboutUsComponent() {
             company aiming to leave a lasting impression, or seeking
             comprehensive marketing solutions, Mental Chunks has you covered.
           </p>
-          <p className="text-[20px] my-8 text-justify leading-loose">
+          <p className="text-[20px] my-8">
             Our dedication to healthcare is unwavering. In an era where
             strengthening healthcare infrastructure is paramount, we stand as
             staunch supporters, offering end-to-end solutions for corporations
             seeking to expand their reach. Because we believe that a healthier
             world begins with empowered minds and informed decisions.
           </p>
-          <p className="text-[20px] my-8 text-justify leading-loose">
+          <p className="text-[20px] my-8">
             Join us on a journey of exploration, empowerment, and endless
             possibilities. Welcome to Mental Chunks, where knowledge meets
             innovation, and curiosity knows no bounds.
@@ -77,7 +75,7 @@ export default function AboutUsComponent() {
         </div>
 
         {/* some bg */}
-        <div className="mb-24">
+        <div className="mb-24 mx-[7.5vw] md:mx-[0vw]">
           <h3 className="text-[22px] text-[#C52809] font-bold mt-8 text-center">
             Learn About
           </h3>

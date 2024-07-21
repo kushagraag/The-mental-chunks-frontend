@@ -24,7 +24,7 @@ export default function QuoteList() {
           Quotes for you
         </h1>
       </div>
-      <div className=" container mx-auto grid grid-cols-3 gap-y-8 gap-x-8 place-items-center max-w-screen-lg mt-12 h-auto">
+      <div className=" container mx-auto grid md:grid-cols-3 gap-y-8 gap-x-8 place-items-center max-w-screen-lg mt-12 h-auto">
         {quotes &&
           quotes.map((quote, index) => (
             <div
